@@ -33,6 +33,13 @@ module.exports = function (grunt) {
 
     // Configuration to be run (and then tested).
     mixit: {
+      new_property: {
+        options: {
+        },
+        files: {
+          'tmp/new_property': ['test/fixtures/base', 'test/fixtures/add_bar_property']
+        }
+      }
     },
 
     // Unit tests.

@@ -26,5 +26,15 @@ exports.mixit = {
   setUp: function (done) {
     // setup here if necessary
     done();
+  },
+  new_property: function (test) {
+    test.expect(2);
+
+    var expected = grunt.file.readJSON('test/expected/new_property');
+    var actual = grunt.file.readJSON('tmp/new_property');
+    test.equal(actual.foo, expected.foo, 'should have the foo property.');
+    test.equal(actual.bar, expected.bar, 'should have the bar property');
+
+    test.done();
   }
 };
