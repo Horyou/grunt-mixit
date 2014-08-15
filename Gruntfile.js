@@ -46,6 +46,13 @@ module.exports = function (grunt) {
         files: {
           'tmp/mix_property': ['test/fixtures/mix_property_base', 'test/fixtures/mix_property_mix']
         }
+      },
+      no_shadow: {
+        options: {
+        },
+        files: {
+          'tmp/no_shadow': ['test/fixtures/no_shadow_base', 'test/fixtures/no_shadow_mix']
+        }
       }
     },
 

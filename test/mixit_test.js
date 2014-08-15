@@ -47,5 +47,15 @@ exports.mixit = {
     test.equal(actual.name.alias, expected.name.alias, 'should have the name.alias property.');
 
     test.done();
+  },
+  no_shadow: function (test) {
+    test.expect(2);
+
+    var expected = grunt.file.readJSON('test/expected/no_shadow');
+    var actual = grunt.file.readJSON('tmp/no_shadow');
+    test.equal(actual.foo, expected.foo, 'should have the same foo property.');
+    test.equal(typeof actual.foo, 'string', 'should have the same foo property.');
+
+    test.done();
   }
 };
