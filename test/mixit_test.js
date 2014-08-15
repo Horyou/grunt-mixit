@@ -36,5 +36,16 @@ exports.mixit = {
     test.equal(actual.bar, expected.bar, 'should have the bar property');
 
     test.done();
+  },
+  mix_property: function (test) {
+    test.expect(3);
+
+    var expected = grunt.file.readJSON('test/expected/mix_property');
+    var actual = grunt.file.readJSON('tmp/mix_property');
+    test.equal(actual.name.firstname, expected.name.firstname, 'should have the name.firstname property.');
+    test.equal(actual.name.lastname, expected.name.lastname, 'should have the name.lastname property.');
+    test.equal(actual.name.alias, expected.name.alias, 'should have the name.alias property.');
+
+    test.done();
   }
 };

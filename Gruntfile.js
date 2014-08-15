@@ -39,6 +39,13 @@ module.exports = function (grunt) {
         files: {
           'tmp/new_property': ['test/fixtures/base', 'test/fixtures/add_bar_property']
         }
+      },
+      mix_property: {
+        options: {
+        },
+        files: {
+          'tmp/mix_property': ['test/fixtures/mix_property_base', 'test/fixtures/mix_property_mix']
+        }
       }
     },
 
