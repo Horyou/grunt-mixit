@@ -1,0 +1,11 @@
+{
+  "a": {
+    "f": "foo",
+    "c": {
+      "foo": "bar",
+      "d": {
+        "c": "thunderstruck"
+      }
+    }
+  }
+}

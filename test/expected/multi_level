@@ -1,0 +1,16 @@
+{
+  "a": {
+    "b": 1,
+    "c": {
+      d: {
+        "a": "foo"
+      },
+      "e": "bar",
+      "foo": "bar",
+      "d": {
+        "c": "thunderstruck"
+      }
+    },
+    "f": "foo"
+  }
+}

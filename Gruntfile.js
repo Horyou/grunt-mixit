@@ -53,6 +53,13 @@ module.exports = function (grunt) {
         files: {
           'tmp/no_shadow': ['test/fixtures/no_shadow_base', 'test/fixtures/no_shadow_mix']
         }
+      },
+      multi_level: {
+        options: {
+        },
+        files: {
+          'tmp/multi_level': ['test/fixtures/multi_level_base', 'test/fixtures/multi_level_mix']
+        }
       }
     },
 
