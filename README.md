@@ -1,6 +1,10 @@
 # grunt-mixit
 
-> Mix data files into one
+Merge multiple json files.
+
+It uses the [mixit](https://github.com/stephanebachelier/mixit) microlib.
+
+If you want more power you should use the [json-merge](https://www.npmjs.org/package/json-merge) by [maxogden](https://www.npmjs.org/~maxogden)
 
 ## Getting Started
 This plugin requires Grunt.
@@ -37,46 +41,44 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### options.indent
+Type: `Number`
+Default value: `0`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+The number of spaces (up to 10) to use to indent the JSON.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
 ```js
 grunt.initConfig({
   mixit: {
-    options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dist/foo.json': ['src/bar.json', 'src/baz.json'],
     },
+    or: {
+      src: ['data/en/**/*.json'],
+      dest: 'dist/en.json'
+    }
   },
 })
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+#### Options
+By default the generated JSON won't have any extra spaces. It will already be minified. If you want a prettier, say readable output you can use the `indent` option, which is FYI, the third parameter of the `JSON.stringify` method.
+
+See [jimcowart](http://freshbrewedcode.com/jimcowart/2013/01/29/what-you-might-not-know-about-json-stringify/) speaking about this function.
 
 ```js
 grunt.initConfig({
   mixit: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      indent: 2
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      src: ['data/en/**/*.json'],
+      dest: 'dist/en.json'
     },
   },
 })
