@@ -57,5 +57,20 @@ exports.mixit = {
     test.equal(typeof actual.foo, 'string', 'should have the same foo property.');
 
     test.done();
-  }
+  },
+  indent: function (test) {
+    test.expect(1);
+
+    var expected = grunt.file.read('test/expected/new_property');
+    var actual = grunt.file.read('tmp/indent');
+
+    // fix issue about editor that may add an extra new line at EOF
+    var beforeLast = expected.length - 1;
+    var _expected = expected.charAt(beforeLast) === '\n' ? expected.substr(0, beforeLast) : expected;
+
+    // run test
+    test.deepEqual(actual, _expected, 'should have the foo property.');
+
+    test.done();
+  },
 };

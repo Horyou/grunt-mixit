@@ -60,6 +60,14 @@ module.exports = function (grunt) {
         files: {
           'tmp/multi_level': ['test/fixtures/multi_level_base', 'test/fixtures/multi_level_mix']
         }
+      },
+      indent: {
+        options: {
+          indent: 2
+        },
+        files: {
+          'tmp/indent': ['test/fixtures/base', 'test/fixtures/add_bar_property']
+        }
       }
     },
 
