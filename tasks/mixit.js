@@ -17,9 +17,10 @@ module.exports = function (grunt) {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
     });
+
+    var mixit = require('mixit');
+    var content = {};
 
     // Iterate over all specified file groups.
     this.files.forEach(function (file) {
@@ -34,18 +35,17 @@ module.exports = function (grunt) {
         }
       }).map(function (filepath) {
         // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
-
-      // Handle options.
-      src += options.punctuation;
-
+        var fileContent = grunt.file.readJSON(filepath);
+        content = mixit(content, fileContent);
+      });
+      
       // Write the destination file.
-      grunt.file.write(file.dest, src);
+      grunt.file.write(file.dest, JSON.stringify(content));
 
       // Print a success message.
       grunt.log.writeln('File "' + file.dest + '" created.');
     });
+
   });
 
 };
