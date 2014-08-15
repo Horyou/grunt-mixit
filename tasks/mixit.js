@@ -17,6 +17,7 @@ module.exports = function (grunt) {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
+      indent: 0
     });
 
     var mixit = require('mixit');
@@ -38,9 +39,9 @@ module.exports = function (grunt) {
         var fileContent = grunt.file.readJSON(filepath);
         content = mixit(content, fileContent);
       });
-      
+
       // Write the destination file.
-      grunt.file.write(file.dest, JSON.stringify(content));
+      grunt.file.write(file.dest, JSON.stringify(content, null, options.indent));
 
       // Print a success message.
       grunt.log.writeln('File "' + file.dest + '" created.');
