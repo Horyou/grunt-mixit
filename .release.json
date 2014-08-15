@@ -1,0 +1,9 @@
+{
+    "verbose": true,
+    "pkgFiles": ["package.json"],
+    "commitMessage": "Release %s",
+    "tagName": "%s",
+    "tagAnnotation": "Release %s",
+    "buildCommand": "grunt",
+    "publish": true
+}
