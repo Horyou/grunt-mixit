@@ -1,6 +1,6 @@
 {
   "name": "grunt-mixit",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Mix data files into one",
   "homepage": "https://github.com/stephanebachelier/grunt-mixit.git",
   "repository": "https://github.com/stephanebachelier/grunt-mixit.git",
